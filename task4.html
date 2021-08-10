@@ -15,22 +15,22 @@
         let chickens=0; //enter the number of chickens
         let cows=0; //enter the number of cows
         let dogs=0; //enter the number of dogs
-         function countleg( chickens,cows,gogs)
+         function countleg( chickens,cows,dogs)
          {
             var count = 0;
 
             count = chickens+cows+dogs;
     if(count<10)
     {
-        document.write("chickens = 4 legs");
-        document.write("<br/>cows = 12 legs");
-        document.write("<br/>dogs = 12 legs");
+        document.write("chickens = "+chickens*4+" legs");
+        document.write("<br/>cows = "+cows*12+" legs");
+        document.write("<br/>dogs = "+dogs*12+" legs");
     }
     else if(count>=10)
     {
-        document.write("chickens = 2  legs");
-        document.write("<br/>cows = 4  legs");
-        document.write("<br/>dogs = 4  legs");
+        document.write("chickens = "+chickens*2+" legs");
+        document.write("<br/>cows = "+cows*4+" legs");
+        document.write("<br/>dogs = "+dogs*4+" legs");
     }
  
          }
