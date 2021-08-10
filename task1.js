@@ -1,7 +1,7 @@
 let a = prompt("enter the 1st number(0-9)");
-//input 1st number
+//input 1st number using prompt
 
-let b = prompt("enter the 2nd number(12-25)");//2nd number
+let b = prompt("enter the 2nd number(12-25)");//input 2nd number using prompt
 
     let  addition= Number(a) + Number(b); //addition
     document.write("Adition  : ", addition + "<br>");
