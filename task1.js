@@ -3,6 +3,7 @@ let a = prompt("enter the 1st number(0-9)");
 
 let b = prompt("enter the 2nd number(12-25)");//input 2nd number using prompt
 
+
     let  addition= Number(a) + Number(b); //addition
     document.write("Adition  : ", addition + "<br>");
     
@@ -19,8 +20,8 @@ let b = prompt("enter the 2nd number(12-25)");//input 2nd number using prompt
     let reminder = Number(a) % Number(b); //reminder
     document.write("Reminder  :", reminder + "<br>");
     
-    let exponentiation = Number(a) ** 2; //exponentiation
-    document.write("Exponential  :", exponentiation + "<br>");
+    let exponentiation = Number(a) ** 5; //exponentiation
+    document.write("Exponential power 5 of a :", exponentiation + "<br>");
     
     let increment = Number(++a); //increment of digit
     document.write("Incremented value : ", increment + "<br>");
@@ -28,5 +29,4 @@ let b = prompt("enter the 2nd number(12-25)");//input 2nd number using prompt
     let decrement = Number(--a); //decrement of digit
     document.write("Decremented value : ", decrement + "<br");
     
-
 
