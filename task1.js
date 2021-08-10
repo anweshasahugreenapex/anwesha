@@ -23,10 +23,10 @@ let b = prompt("enter the 2nd number(12-25)");//input 2nd number using prompt
     const exponentiation = Number(a) ** 5; //exponentiation
     document.write("Exponential power 5 of a :", exponentiation + "<br>");
     
-    const increment = Number(++a); //increment of digit
+    const increment = Number(++a); //increment of a
     document.write("Incremented value : ", increment + "<br>");
     
-    const decrement = Number(--a); //decrement of digit
+    const decrement = Number(--a); //decrement of a
     document.write("Decremented value : ", decrement + "<br");
     
 
