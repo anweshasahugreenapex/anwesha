@@ -12,7 +12,7 @@ while (!isanumber(Num3)) {
   Num3 = prompt("Enter the valid number :");
 }
 
-if (Num1 > 0 && Num2 > 0 && Num3 > 0) {   //checking for the sign og the product
+if (Num1 > 0 && Num2 > 0 && Num3 > 0) {   //checking for the sign of the product
   alert("The sign is +");
 } else if (Num1 < 0 && Num2 < 0 && Num3 < 0) {
   alert("The sign is -");
@@ -21,7 +21,7 @@ if (Num1 > 0 && Num2 > 0 && Num3 > 0) {   //checking for the sign og the product
 } else if (Num1 < 0 && Num2 > 0 && Num3 < 0) {
   alert("The sign is +");
 } else if (Num1 == 0 || Num2 == 0 || Num3 == 0) {
-  alert("One of your values is zero ,so the product is 0");//if any value is zero then product is 0 so no sign for that
+  alert("One of your values is zero ,so the product is 0");//if any value is zero then product is 0 so no sign for that.
 }  else {
   alert("The sign is -");
 }
