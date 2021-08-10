@@ -12,14 +12,14 @@
 </head>
 <body>
     <script>
-        let chickens=7; //enter the number of chickens
-        let cows=5; //enter the number of cows
-        let dogs=2; //enter the number of dogs
+        let chickens=0; //enter the number of chickens
+        let cows=0; //enter the number of cows
+        let dogs=0; //enter the number of dogs
+         function countleg( chickens,cows,gogs)
+         {
+            var count = 0;
 
- 
-    var count = 0;
- 
-    count = chickens+cows+dogs;
+            count = chickens+cows+dogs;
     if(count<10)
     {
         document.write("chickens = 4 legs");
@@ -33,6 +33,11 @@
         document.write("<br/>dogs = 4  legs");
     }
  
+         }
+ countleg(1,3,5);
+    
+ 
+    
     
 </script>
 </body>
