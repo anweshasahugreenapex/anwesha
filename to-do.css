@@ -1,77 +1,108 @@
 * {
-  margin: o;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
 body {
   width: 100%;
   overflow-x: hidden;
+  height: 100vh;
+  background: linear-gradient(135deg, #8052ec, #d161ff);
 }
 
 .container {
   width: 70%;
-  margin: 20px auto;
-  padding: 20px;
+
+  min-width: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px 40px;
 }
 
+#newtask {
+  position: relative;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #8052ec;
+}
 .container h1 {
   text-align: center;
-}
-
-.form {
-  width: 70%;
-  margin: 10px auto;
-}
-
-.form:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.form input,
-.form button {
-  height: 35px;
-  border-radius: 3px;
-  float: left;
-}
-
-.form input {
-  width: 80%;
-  border: 1px solid black;
-}
-
-.form button {
-  width: 20%;
-  background-color: black;
-  color: aliceblue;
-  border: none;
-}
-
-#todolist {
-  width: 70%;
-  margin: 20px auto;
-  list-style-type: none;
+  font-size: 60px;
+  color: #ffffff;
 }
 
 #todolist li {
+  margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 0 8px 10px 1px rgb(70, 64, 64);
-  border: 1px solid rgb(209, 42, 42);
+  box-shadow: 0 8px 10px 1px rgb(167, 161, 161);
+  border: 3px solid #dfdbe9;
   border-radius: 3px;
+  color: #ffffff;
+  font-size: 30px;
 }
 
 #todolist li button {
-  font-size: 12px;
   float: right;
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 5px;
-  background-color: black;
+  background-color: #8052ec;
   color: aliceblue;
   border: none;
   height: 35px;
   border-radius: 3px;
+
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(167, 161, 161);
+  border: 1px solid #8052ec;
+}
+#newtask input {
+  width: 70%;
+  width: 70%;
+  height: 45px;
+
+  font-size: 20px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #8052ec;
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+}
+#newtask input:focus {
+  outline: none;
+  border-color: #8052ec;
+}
+#newtask button {
+  position: relative;
+  float: right;
+  width: 20%;
+  height: 45px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #8052ec;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.todolist {
+  background-color: #ffffff;
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #d1d3d4;
+
+  cursor: pointer;
 }
