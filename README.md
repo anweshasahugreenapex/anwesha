@@ -1,2 +1,0 @@
-# Anwesha
-JS PRACTICE
