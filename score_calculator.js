@@ -25,8 +25,8 @@ let inputscores = () => {
     let avg = (sum / 3).toFixed(2);
     return avg;
   };
-  let avg_score = calcAverage(score1, score2, score3);
-  return avg_score;
+  // let avg_score = calcAverage(score1, score2, score3);
+  // return avg_score;
 };
 
 alert("enter the team A scores");
