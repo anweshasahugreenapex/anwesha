@@ -2,15 +2,9 @@ const bills = [125, 555, 44]; //array to store the bill data
 let tips = []; //array to store tips
 let totals = []; //array to store total amount
 
-const calculate = (bill) => {
-  //function to calculate tip
-  let tip = bill <= 300 && bill >= 50 ? (bill * 15) / 100 : (bill * 20) / 100;
-  return Number(tip);
-};
-
 bills.map((item, index) => {
   //map function to store  tips and total
-  tips[index] = calculate(item);
+  tips[index] = item <= 300 && item >= 50 ? (item * 15) / 100 : (item * 20) / 100 ;
   totals[index] = tips[index] + item;
 });
 
