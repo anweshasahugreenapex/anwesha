@@ -73,5 +73,12 @@ const multiple = data.IDs.map(
 );
 document.write(multiple);
 
+document.write(`<br/><br/>while loop output :- <br/>`);
 
+let num = 0;
+while (num < data.colors.length) {
+  //while loop
 
+  document.write(`${data.colors[num]}<br/>`);
+  num++;
+}
