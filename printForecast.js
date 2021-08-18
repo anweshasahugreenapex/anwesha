@@ -1,8 +1,8 @@
-let data1 = [17, 21, 23]; //dataset 1
-let data2 = [12, 5, -5, 0, 4]; //dataset 2
+const data1 = [17, 21, 23]; //dataset 1
+const data2 = [12, 5, -5, 0, 4]; //dataset 2
 let result = "";
 
-let printForecast = (value) => {
+const printForecast = (value) => {
   value.map(
     //map function to print the forecast
     (dataval, day) => (result += `${dataval} ºC in ${day + 1} days<br/>`)
