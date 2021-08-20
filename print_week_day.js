@@ -1,8 +1,6 @@
 const day = Number(prompt("enter the number")); //take user input to show the corresponding day.
 
-switch (
-  day //switch case
-) {
+switch (day) {//switch case
   case 1: //if day = 1
     document.getElementById("Result").innerText = "MONDAY";
     break;
