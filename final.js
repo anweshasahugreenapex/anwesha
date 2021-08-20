@@ -1,30 +1,51 @@
-let data = [];//array to store object inputs
+let data = []; //array to store object inputs
 let index = null;
 let indd = null;
 
-const resetTable = () => {//to reset the data
+const resetTable = () => {
+  //to reset the data
   const confirmMessage = confirm(
     "Are you sure want to reset table data? It will delete all data from table. "
   );
+ 
   if (confirmMessage) {
-    window.location.reload();
-    alert("cleared Successfully");
+    document.getElementById("showResult").innerHTML = " ";
+    document.getElementById("fname").value = "";
+    document.getElementById("lname").value = "";
+    document.getElementById("yr").value = "";
+    document.getElementById("email").value = "";
+    // alert("cleared Successfully");
   } else {
     alert("cancelled!");
   }
 };
+const resetinput=()=>{
 
-const addData = () => {//function to run on click of add button
-  if (index !== null) {//for update button
-    data[indd].id = index;// storing the values to the update object
-    data[indd].fname= document.getElementById("fname").value;
+  document.getElementById("fname").value = "";
+  document.getElementById("lname").value = "";
+  document.getElementById("yr").value = "";
+  document.getElementById("email").value = "";
+}
+
+const addData = () => {
+  //function to run on click of add button
+  if (index !== null) {
+    //for update button
+    data[indd].id = index; // storing the values to the update object
+    data[indd].fname = document.getElementById("fname").value;
     data[indd].lname = document.getElementById("lname").value;
     data[indd].age = document.getElementById("yr").value;
     data[indd].email = document.getElementById("email").value;
-   
-   data.unshift(data.splice(indd,1)[0])//putting the updated value at first and removing the older
- 
-    print(data);
+    if (data[indd].fname != "" &&  data[indd].lname != "" && data[indd].age != "" && data[indd].email != ""){
+      print(data);
+    resetinput()//reset the input after updating
+    index=null//putting index value to null after updation
+    
+    }
+    else {
+      alert("All feilds are Mandatory..");
+    }
+    
   } else {
     //input from user for new data
     const getfName = document.getElementById("fname").value;
@@ -53,8 +74,8 @@ const addData = () => {//function to run on click of add button
   }
 };
 
-
-function print(arr) {//print the updated array
+const print = (arr) => {
+  //print the updated array
   document.getElementById("showResult").innerHTML = " ";
   let result = " ";
   arr.map((object) => {
@@ -71,27 +92,29 @@ function print(arr) {//print the updated array
             </tr>`;
     document.getElementById("showResult").innerHTML = result;
   });
-}
+};
 
-
-const deleteRow = (delete_item) => {//function to run on delete button
+const deleteRow = (delete_item) => {
+  //function to run on delete button
   var cnfrmMessage = confirm("Are you sure want to Delete selected data? ");
   if (cnfrmMessage == true) {
-    let indexx = delete_item;//fetching the id value
-    let ind = data.findIndex((i) => i.id === indexx);//get the index of object
-   data.splice(ind, 1);
+    let data1 = Object.assign([], data);
+    let indexx = delete_item; //fetching the id value
+    let ind = data1.findIndex((i) => i.id === indexx); //get the index of object
+    data1.splice(ind, 1);
+    data = data1;
     print(data);
   } else {
     alert("Cancelled..!!");
   }
 };
 
-const updateRow = (delete_item) => {//function to run on update button
-  index = delete_item;//fetching the id value
-  indd = data.findIndex((i) => i.id === index);//get the index of object
+const updateRow = (delete_item) => {
+  //function to run on update button
+  index = delete_item; //fetching the id value
+  indd = data.findIndex((i) => i.id === index); //get the index of object
   document.getElementById("fname").value = data[indd].fname;
   document.getElementById("lname").value = data[indd].lname;
   document.getElementById("yr").value = data[indd].age;
   document.getElementById("email").value = data[indd].email;
- 
-};
+}
