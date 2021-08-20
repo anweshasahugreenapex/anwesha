@@ -8,20 +8,23 @@ switch (day) {//switch case
     document.getElementById("Result").innerText = "TUESDAY";
     break;
   case 3: //if day = 3
-    document.getElementById("Result").innerText = "WEDDAY";
+    document.getElementById("Result").innerText = "WEDNESDAY";
     break;
   case 4: //if day = 4
     document.getElementById("Result").innerText = "THURSDAY";
     break;
   case 5: //if day = 5
     document.getElementById("Result").innerText = "FRIDAY";
+    break;
   case 6: //if day = 6
     document.getElementById("Result").innerText = "SATURDAY";
+    break;
   case 7: //if day = 7
     document.getElementById("Result").innerText = "SUNDAY";
     break;
-  case "": //if day doesn't match any of above or blank.
+  
   default:
     document.getElementById("Result").innerText =
       "INVALID INPUT. PLEASE ENTER A VALID INPUT";
+      break;
 }
