@@ -1,0 +1,17 @@
+.thead-dark th {
+    padding: 8px;
+}
+.table-items{
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 500px;
+    margin-top: -300px;
+}
+.table-items h1{
+    padding: 2px;
+  
+}
+
+#row td{
+    padding: 8px;
+}
