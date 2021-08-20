@@ -40,7 +40,7 @@ const addData = () => {
       print(data);
     resetinput()//reset the input after updating
     index=null//putting index value to null after updation
-    
+
     }
     else {
       alert("All feilds are Mandatory..");
@@ -68,6 +68,7 @@ const addData = () => {
       // $("#lname").val("");
       // $("#age").val("");
       // $("#email").val("");
+      resetinput();
     } else {
       alert("All feilds are Mandatory..");
     }
