@@ -8,9 +8,8 @@ body {
   width: 100%;
   overflow-x: hidden;
   height: 100vh;
-  background: white
+  background: white;
 }
-
 
 .container {
   width: 70%;
@@ -24,30 +23,27 @@ body {
 }
 .container h1 {
   text-align: center;
-  color:  #141314;
+  color: #141314;
   margin-top: 10%;
 }
 
 .col-sm-4 {
   position: relative;
-  background-color:  #97d4ec;
+  background-color: #97d4ec;
   padding: 30px 20px;
   border-radius: 5px;
   box-shadow: 0 15px 30px #1c1c1d;
   border: 3px solid #d1d3d4;
 }
-.input_section label{
+.input_section label {
   margin-left: 11%;
   font-size: 20px;
   padding: 12px;
   color: #070707;
   font-weight: 500;
-  
 }
 
-
 .input_section input {
-
   display: flex;
   width: 80%;
   height: 45px;
@@ -55,15 +51,14 @@ body {
   font-size: 20px;
   border: 2px solid #d1d3d4;
   padding: 12px;
- 
+
   font-weight: 500;
   position: relative;
   border-radius: 5px;
   box-shadow: 0 15px 30px #5e5e5f;
 }
 
-.input_section button{
- 
+.input_section button {
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 20%;
@@ -76,16 +71,14 @@ body {
   font-weight: 500;
   font-size: 20px;
   box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
-  
 }
 
-.container table tr th{
-  cursor: pointer;
+.container table tr th {
   margin-bottom: 2px;
   margin-left: 20%;
   padding: 20px;
   border: #070707;
-  background-color:#97d4ec ;
+  background-color: #97d4ec;
   border: none;
   height: 35px;
   border-radius: 5px;
@@ -93,10 +86,8 @@ body {
   font-weight: 500;
   font-size: 20px;
   box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
-
 }
-#showResult #row{
-
+#showResult #row {
   margin-bottom: 3px;
   margin-left: 20%;
   padding: 20px;
@@ -110,9 +101,8 @@ body {
   box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
   text-align: center;
   padding: 9px;
-
 }
-#change{
+#change {
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 20%;
@@ -121,9 +111,8 @@ body {
   border: none;
   height: 20px;
   border-radius: 5px;
-  
+
   font-weight: 500;
   font-size: 20px;
   box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
 }
-
