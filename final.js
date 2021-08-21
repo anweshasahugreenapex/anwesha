@@ -44,9 +44,16 @@ const addData = () => {
       data[indd].age != "" &&
       data[indd].email != ""
     ) {
-      print(data);
-      resetinput(); //reset the input after updating
-      index = null; //putting index value to null after updation
+      if (
+        validateEmail() &&
+        validatefirstname() &&
+        validatelastname() &&
+        validateage()
+      ) {
+        print(data);
+        resetinput(); //reset the input after updating
+        index = null; //putting index value to null after updation
+      }
     } else {
       alert("All feilds are Mandatory..");
     }
@@ -56,13 +63,13 @@ const addData = () => {
     const getlName = document.getElementById("lname").value;
     const getage = document.getElementById("yr").value;
     const getEmail = document.getElementById("email").value;
-    if (
-      validateEmail() &&
-      validatefirstname() &&
-      validatelastname() &&
-      validateage()
-    ) {
-      if (getfName != "" && getlName != "" && getage != "" && getEmail != "") {
+    if (getfName != "" && getlName != "" && getage != "" && getEmail != "") {
+      if (
+        validateEmail() &&
+        validatefirstname() &&
+        validatelastname() &&
+        validateage()
+      ) {
         const obj = {
           id: new Date().getUTCMilliseconds(),
           fname: getfName,
@@ -78,9 +85,9 @@ const addData = () => {
         // $("#age").val("");
         // $("#email").val("");
         resetinput();
-      } else {
-        alert("All feilds are Mandatory..");
-      }
+      } 
+    }else {
+      alert("All feilds are Mandatory..");
     }
   }
 };
