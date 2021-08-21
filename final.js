@@ -85,8 +85,8 @@ const addData = () => {
         // $("#age").val("");
         // $("#email").val("");
         resetinput();
-      } 
-    }else {
+      }
+    } else {
       alert("All feilds are Mandatory..");
     }
   }
@@ -191,4 +191,23 @@ const validateage = () => {
   alert("Please enter correct age");
   document.getElementById("yr").focus();
   return false;
+};
+
+const search = () => {
+  const a = document.getElementById("search_val").value;
+  // console.log(a)
+  search_ind = data.findIndex((i) => i.fname === a || i.lname === a);
+  console.log(search_ind);
+  result = " ";
+  result += `<tr id='row'>
+           <td>${data[search_ind].id}</td>
+            <td>${data[search_ind].fname}</td>
+            <td>${data[search_ind].lname}</td>
+            <td>${data[search_ind].age}</td>
+            <td>${data[search_ind].email}</td>
+           
+            <td><input id="change" type='button' onclick='deleteRow(${data[search_ind].id});' class='btn btn-danger' value='Delete'/></td>
+            <td><input id="change" type='button' onclick='updateRow(${data[search_ind].id});' class='btn btn-danger' value='Update'/></td>
+           </tr>`;
+  document.getElementById("showResult").innerHTML = result;
 };
