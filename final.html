@@ -6,11 +6,18 @@
   </head>
 
   <body>
+     <div class="searchbar">
+        <input type="text" id="search_val" placeholder="enter your name">
+        <button  id="searchbtn" onClick="search();">Search</button>
+      </div>
     <br /><br /><br />
+
     <div class="container">
-      <h1>Enter Details</h1>
+     
+     
       <br />
       <div class="row">
+        <h1>Enter Details</h1>
         <div class="col-sm-4">
           
           <div class="input_section">
@@ -62,8 +69,9 @@
 
         <div class="table-items">
           <table>
-            <thead class="thead-dark">
-              <h1>Entered Details:-</h1>
+            <thead class="thead-dark" id="tablehead">
+              <br/><br /><br />
+              <h1> Details</h1>
               <tr>
                 <th>User ID</th>
                 <th>First-Name</th>
