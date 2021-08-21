@@ -1,17 +1,129 @@
-.thead-dark th {
-    padding: 8px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.table-items{
-    border-radius: 5px;
-    padding: 3px;
-    margin-left: 500px;
-    margin-top: -300px;
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100vh;
+  background: white
 }
-.table-items h1{
-    padding: 2px;
+
+
+.container {
+  width: 70%;
+
+  min-width: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px 40px;
+}
+.container h1 {
+  text-align: center;
+  color:  #141314;
+  margin-top: 10%;
+}
+
+.col-sm-4 {
+  position: relative;
+  background-color:  #97d4ec;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #1c1c1d;
+  border: 3px solid #d1d3d4;
+}
+.input_section label{
+  margin-left: 11%;
+  font-size: 20px;
+  padding: 12px;
+  color: #070707;
+  font-weight: 500;
   
 }
 
-#row td{
-    padding: 8px;
+
+.input_section input {
+
+  display: flex;
+  width: 80%;
+  height: 45px;
+  margin-left: 11%;
+  font-size: 20px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+ 
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #5e5e5f;
 }
+
+.input_section button{
+ 
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 20%;
+  background-color: #f3f1f7;
+  color: rgb(13, 13, 14);
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+  
+}
+
+.container table tr th{
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 20%;
+  padding: 20px;
+  border: #070707;
+  background-color:#97d4ec ;
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+
+}
+#showResult #row{
+
+  margin-bottom: 3px;
+  margin-left: 20%;
+  padding: 20px;
+  border: #070707;
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+  text-align: center;
+  padding: 9px;
+
+}
+#change{
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 20%;
+  background-color: #97d4ec;
+  color: rgb(13, 13, 14);
+  border: none;
+  height: 20px;
+  border-radius: 5px;
+  
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+}
+

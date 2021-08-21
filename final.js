@@ -14,6 +14,9 @@ const resetTable = () => {
     document.getElementById("lname").value = "";
     document.getElementById("yr").value = "";
     document.getElementById("email").value = "";
+    index=null;//set index to null
+    indd=null;//set index id to null
+    data.length=0// make the data array empty.
     // alert("cleared Successfully");
   } else {
     alert("cancelled!");
@@ -87,8 +90,8 @@ const print = (arr) => {
             <td>${object.age}</td>
             <td>${object.email}</td>
            
-            <td><input type='button' onclick='deleteRow(${object.id});' class='btn btn-danger' value='Delete'/></td>
-            <td><input id="update" type='button' onclick='updateRow(${object.id});' class='btn btn-danger' value='Update'/></td>
+            <td><input id="change" type='button' onclick='deleteRow(${object.id});' class='btn btn-danger' value='Delete'/></td>
+            <td><input id="change" type='button' onclick='updateRow(${object.id});' class='btn btn-danger' value='Update'/></td>
            
             </tr>`;
     document.getElementById("showResult").innerHTML = result;
