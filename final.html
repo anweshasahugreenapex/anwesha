@@ -74,10 +74,11 @@
             
            
             <div class="searchbar">
-              <input type="text" id="search_val" placeholder="enter your name">
+              <input type="text" id="search_val" placeholder="enter your name" onkeyup="fun()">
               <!-- <button  id="searchbtn" onClick="search();">Search</button> 
                -->
-               <select id="searchbtn" name="select" id="selectbox" onchange="fun()" >//search dropdown menu
+               <select  name="select" id="selectbox" onchange="fun()">
+              
                 <option value="search" >search</option>
                  <option value="A-Z" >A-Z</option>
                  <option value="Z-A">Z-A</option>
