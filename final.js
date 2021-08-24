@@ -197,17 +197,49 @@ const search = () => {
   const a = document.getElementById("search_val").value;
   // console.log(a)
   search_ind = data.findIndex((i) => i.fname === a || i.lname === a);
-  console.log(search_ind);
-  result = " ";
-  result += `<tr id='row'>
-           <td>${data[search_ind].id}</td>
-            <td>${data[search_ind].fname}</td>
-            <td>${data[search_ind].lname}</td>
-            <td>${data[search_ind].age}</td>
-            <td>${data[search_ind].email}</td>
-           
-            <td><input id="change" type='button' onclick='deleteRow(${data[search_ind].id});' class='btn btn-danger' value='Delete'/></td>
-            <td><input id="change" type='button' onclick='updateRow(${data[search_ind].id});' class='btn btn-danger' value='Update'/></td>
-           </tr>`;
-  document.getElementById("showResult").innerHTML = result;
+};
+print(data);
+
+const fun = () => {//function to call on selected dropdown value
+  if (data.length == 0) {
+    alert(
+      "the database is empty.Please enter some values to perform search operation."
+    );
+  } else {
+    let select = document.getElementById("selectbox");
+    let selected_val = select.options[select.selectedIndex].value;
+    if (selected_val == "asc by age") {//sort by age in buttom up approach
+      data.sort(function (a, b) {
+        return a.age - b.age;
+      });
+      // console.log(data)
+      print(data);
+    } else if (selected_val == "desc by age") {//sort age in top buttom approach
+      data.sort(function (a, b) {
+        return b.age - a.age;
+      });
+      // console.log(data)
+      print(data);
+    } else if (selected_val == "A-Z") {//sort firstname in alphabetical order
+      data.sort(function (a, b) {
+        if (a.fname > b.fname) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      // console.log(data)
+      print(data);
+    } else if (selected_val == "Z-A") {//sort using reverse alphabetival order
+      data.sort(function (a, b) {
+        if (b.fname > a.fname) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      // console.log(data)
+      print(data);
+    }
+  }
 };
