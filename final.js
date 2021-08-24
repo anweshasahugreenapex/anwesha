@@ -193,34 +193,35 @@ const validateage = () => {
   return false;
 };
 
-const search = () => {
-  const a = document.getElementById("search_val").value;
-  // console.log(a)
-  search_ind = data.findIndex((i) => i.fname === a || i.lname === a);
-};
-print(data);
 
-const fun = () => {//function to call on selected dropdown value
+
+const fun = () => {
+  //function to call on selected dropdown value
   if (data.length == 0) {
     alert(
       "the database is empty.Please enter some values to perform search operation."
     );
   } else {
     let select = document.getElementById("selectbox");
+    // console.log(select)
     let selected_val = select.options[select.selectedIndex].value;
-    if (selected_val == "asc by age") {//sort by age in buttom up approach
+    // console.log(selected_val)
+    if (selected_val == "asc by age") {
+      //sort by age in buttom up approach
       data.sort(function (a, b) {
         return a.age - b.age;
       });
       // console.log(data)
       print(data);
-    } else if (selected_val == "desc by age") {//sort age in top buttom approach
+    } else if (selected_val == "desc by age") {
+      //sort age in top buttom approach
       data.sort(function (a, b) {
         return b.age - a.age;
       });
       // console.log(data)
       print(data);
-    } else if (selected_val == "A-Z") {//sort firstname in alphabetical order
+    } else if (selected_val == "A-Z") {
+      //sort firstname in alphabetical order
       data.sort(function (a, b) {
         if (a.fname > b.fname) {
           return 1;
@@ -230,7 +231,8 @@ const fun = () => {//function to call on selected dropdown value
       });
       // console.log(data)
       print(data);
-    } else if (selected_val == "Z-A") {//sort using reverse alphabetival order
+    } else if (selected_val == "Z-A") {
+      //sort using reverse alphabetival order
       data.sort(function (a, b) {
         if (b.fname > a.fname) {
           return 1;
@@ -240,6 +242,22 @@ const fun = () => {//function to call on selected dropdown value
       });
       // console.log(data)
       print(data);
+    } else if (selected_val == "search") {
+      //sort age in top buttom approach
+      const a = document.getElementById("search_val").value;
+      let search_arr = [];//array to store similar searched value
+      data.map((objects) => {
+        if (objects.fname.includes(a)) {
+          search_arr.push(objects);
+        } else {
+          return -1;
+        }
+      });
+      if (search_arr.length > 0) {
+        print(search_arr);
+      } else {
+        alert("not found");//if not found
+      }
     }
   }
 };
