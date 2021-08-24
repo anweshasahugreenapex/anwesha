@@ -3,13 +3,13 @@
     <meta charset="utf-8" />
     <title>Table for person details</title>
     <link rel="stylesheet" href="final.css" />
+    
+    
+    
   </head>
 
   <body>
-     <div class="searchbar">
-        <input type="text" id="search_val" placeholder="enter your name">
-        <button  id="searchbtn" onClick="search();">Search</button>
-      </div>
+     
     <br /><br /><br />
 
     <div class="container">
@@ -66,12 +66,28 @@
             </button>
           </div>
         </div>
+        
 
         <div class="table-items">
           <table>
+            <h1> Details</h1>
+            
+           
+            <div class="searchbar">
+              <input type="text" id="search_val" placeholder="enter your name">
+              <!-- <button  id="searchbtn" onClick="search();">Search</button> 
+               -->
+               <select id="searchbtn" name="select" id="selectbox" onchange="fun()" >//search dropdown menu
+                <option value="search" >search</option>
+                 <option value="A-Z" >A-Z</option>
+                 <option value="Z-A">Z-A</option>
+                 <option value="asc by age">asc by age</option>
+                 <option value="desc by age">desc by age</option>
+               </select>  
+             
             <thead class="thead-dark" id="tablehead">
               <br/><br /><br />
-              <h1> Details</h1>
+              
               <tr>
                 <th>User ID</th>
                 <th>First-Name</th>
@@ -89,5 +105,6 @@
     </div>
 
     <script src="final.js"></script>
+    
   </body>
 </html>

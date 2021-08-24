@@ -15,10 +15,8 @@
   margin-bottom: 3%;
   height: 26px;
 } */
-.searchbar input{
- 
- 
-  width: 71%;
+.searchbar input {
+  width: 80%;
   height: 5%;
   margin-left: 2%;
   font-size: 20px;
@@ -26,28 +24,12 @@
   padding: 10px;
   margin-bottom: 2%;
   font-weight: 500;
- 
-  border-radius: 5px;
-  box-shadow: 0 15px 30px #5e5e5f;
-  margin-bottom: 8%;
-}
-#searchbtn{
-  cursor: pointer;
-  float: left;
-  margin-left: 0%;
-  background-color: #e1f2f7;
-  color: rgb(13, 13, 14);
-  border: none;
-  height: 30px;
-  border-radius: 5px;
-  width: 10%;
-  font-weight: 500;
-  font-size: 20px;
-  border-radius: 5px;
-  box-shadow: 0 15px 30px #5e5e5f;
-  margin-bottom: 8%;
-}
 
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #393942;
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
 body {
   width: 100%;
   overflow-x: hidden;
@@ -160,3 +142,12 @@ body {
   font-size: 20px;
   box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
 }
+#searchbtn {
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+  border-radius: 5px;
+  background-color: #97d4ec;
+  
+}
+
