@@ -6,12 +6,12 @@ createform.setAttribute("action", ""); // Setting Action Attribute on Form
 createform.setAttribute("method", "post"); // Setting Method Attribute on Form
 form_fetch.appendChild(createform);
 
-const heading = document.createElement("h2"); // Heading of Form
+const heading = document.createElement("h2");
+heading.setAttribute("id", "heading"); // Heading of Form
 heading.innerHTML = "Login Form ";
 createform.appendChild(heading);
 
-const line = document.createElement("hr"); // Giving Horizontal Row After Heading
-createform.appendChild(line);
+
 
 const linebreak = document.createElement("br");
 createform.appendChild(linebreak);
@@ -61,7 +61,6 @@ submitelement.setAttribute("value", "Submit");
 submitelement.setAttribute("id", "Submitbtn");
 createform.appendChild(submitelement);
 
-// const ev = document.getElementById("Submitbtn");
 
 Submitbtn.addEventListener("click", function () {//on click of submit button   alert submitted successfully.
   alert("submitted successfully");
