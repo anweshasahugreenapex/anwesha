@@ -1,9 +1,8 @@
 // Fetching HTML Elements in Variables by ID.
 let form_fetch = document.getElementById("form_sample");
 const createform = document.createElement("form"); // Create New Element Form
-createform.setAttribute("action", ""); // Setting Action Attribute on Form
+createform.setAttribute("name", "form"); 
 
-createform.setAttribute("method", "post"); // Setting Method Attribute on Form
 form_fetch.appendChild(createform);
 
 const heading = document.createElement("h2");
