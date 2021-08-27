@@ -109,9 +109,7 @@ Submitbtn.addEventListener("click", function () {
     input_table.appendChild(table);
 
     refresh_input();
-  } else {
-    alert("all fields are mandatory!");
-  }
+  } 
 });
 
 const refresh_input = () => {
