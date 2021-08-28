@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Table for person details</title>
+    <link rel="stylesheet" href="crud_localstorage.css" />
+  </head>
+
+  <body>
+    <br /><br /><br />
+
+    <div class="container">
+      <br />
+      <div class="row">
+        <h1>Enter Details</h1>
+        <div class="col-sm-4">
+          <div class="input_section">
+            <label for="fname">FirstName</label><br />
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              placeholder="enter your first name"
+              required
+            /><br />
+
+            <label for="lname">LastName</label><br />
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              placeholder="enter your last name"
+              required
+            /><br />
+
+            <label for="yr">Age</label><br />
+            <input
+              type="number"
+              class="form-control"
+              id="yr"
+              placeholder="enter your  age"
+              required
+            /><br />
+
+            <label>Enter Email: </label><br />
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              placeholder="enter your email: username@gmail.com"
+              required
+            /><br />
+
+            <button class="btn btn-success" onClick="addData()">Submit</button>
+            <button class="btn btn-danger" onClick="resetTable()">Reset</button>
+          </div>
+        </div>
+
+        <div class="table-items">
+          <table>
+            <h1>Details</h1>
+
+            <thead class="thead-dark" id="tablehead">
+              <br /><br /><br />
+
+              <tr>
+                <th>User ID</th>
+                <th>First-Name</th>
+                <th>Last-Name</th>
+                <th>Age</th>
+                <th>email</th>
+                <th>Delete</th>
+                <th>Update</th>
+              </tr>
+            </thead>
+            <tbody id="showResult"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="crud_localstorage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* .searchbar{
+    width: 100%;
+   background-color: #edf1f3;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 50%;
+    padding: 30px 40px;
+    margin-bottom: 3%;
+    height: 26px;
+  } */
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100vh;
+  background: white;
+}
+
+.container {
+  width: 70%;
+
+  min-width: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px 40px;
+}
+.container h1 {
+  text-align: center;
+  color: #141314;
+  margin-top: 10%;
+}
+
+.col-sm-4 {
+  position: relative;
+  background-color: #97d4ec;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #1c1c1d;
+  border: 3px solid #d1d3d4;
+}
+.input_section label {
+  margin-left: 11%;
+  font-size: 20px;
+  padding: 12px;
+  color: #070707;
+  font-weight: 500;
+}
+
+.input_section input {
+  display: flex;
+  width: 80%;
+  height: 45px;
+  margin-left: 11%;
+  font-size: 20px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #5e5e5f;
+}
+
+.input_section button {
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 20%;
+  background-color: #f3f1f7;
+  color: rgb(13, 13, 14);
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+}
+
+.container table tr th {
+  margin-bottom: 5px;
+  margin-left: 20%;
+  padding: 20px;
+  border: #070707;
+  background-color: #97d4ec;
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(70, 69, 69);
+}
+#showResult {
+  margin: 7px;
+  margin-left: 20%;
+  padding: 20px;
+  border: #070707;
+  border: none;
+  height: 45px;
+  border-radius: 5px;
+  width: 20%;
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(8, 8, 8);
+  text-align: center;
+  padding: 9px;
+}
+#change {
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 20%;
+  background-color: #97d4ec;
+  color: rgb(13, 13, 14);
+  border: none;
+  height: 20px;
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 20px;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+}
+#selectbox {
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 8px 10px 1px rgb(92, 89, 89);
+  border-radius: 5px;
+  background-color: #97d4ec;
+}
