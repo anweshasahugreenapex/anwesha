@@ -90,7 +90,7 @@ const addData = () => {
   }
 };
 
-function dispData() {
+const dispData=()=> {
   //console.log(localStorage.getItem("data"));
   if (localStorage.getItem("data")) {
     var output = document.querySelector("tbody");
