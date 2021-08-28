@@ -132,9 +132,9 @@ const deleteRow = (delete_item) => {
   }
 };
 
-const updateRow = (delete_item) => {
+const updateRow = (update_item) => {
   //function to run on update button
-  index = delete_item; //fetching the id value
+  index = update_item; //fetching the id value
   indd = data.findIndex((i) => i.id === index); //get the index of object
   document.getElementById("fname").value = data[indd].fname;
   document.getElementById("lname").value = data[indd].lname;
