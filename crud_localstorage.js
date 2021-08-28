@@ -1,4 +1,4 @@
-let data = JSON.parse(localStorage.getItem("data")) || [];
+let data = JSON.parse(localStorage.getItem("data")) || [];//to store in local storage
 let index = null;
 let indd = null;
 
@@ -22,7 +22,7 @@ const resetTable = () => {
   }
 };
 
-const resetinput = () => {
+const resetinput = () => {//reset the input fields
   document.getElementById("fname").value = "";
   document.getElementById("lname").value = "";
   document.getElementById("yr").value = "";
