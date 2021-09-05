@@ -149,6 +149,7 @@ const showGame = () => {
   }
   //function to move the doodler left when left arrow key is pressed
   function moveLeft() {
+    
     if (isGoingRight) {
       clearInterval(rightTimerId);
       isGoingRight = false;
@@ -164,6 +165,7 @@ const showGame = () => {
   }
 
   function moveRight() {
+   
     if (isGoingLeft) {
       clearInterval(leftTimerId);
       isGoingLeft = false;
@@ -184,13 +186,22 @@ const showGame = () => {
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
 
-    if (doodlerbottomSpace < 200) {
-      jumpDoodler();
-      isJumping = true;
-    } else {
-      fallDoodler();
-      isJumping = false;
-    }
+    // if (doodlerbottomSpace < 200) {
+    //   isGoingLeft = false;
+    //   isGoingRight = false;
+    //   clearInterval(leftTimerId);
+    //   clearInterval(rightTimerId);
+    //   jumpDoodler();
+    //   isJumping = true;
+    // } else {
+    //   isGoingLeft = false;
+    //   isGoingRight = false;
+    //   clearInterval(leftTimerId);
+    //   clearInterval(rightTimerId);
+    //   fallDoodler();
+    //   isJumping = false;
+     
+    // }
   }
 
   //assign functions to keyCodes
