@@ -18,12 +18,10 @@
 }
 
 .platform {
-  width: 80px;
+  width: 85px;
   height: 20px;
   background-image: url("platform.png");
-  border-radius: 10px;
-  border-color: black;
-  border-width: 2px;
+ 
   position: absolute;
   /* margin-bottom: 3px; */
 }
