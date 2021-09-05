@@ -160,7 +160,7 @@ const showGame = () => {
       if (doodlerLeftSpace >= 0) {
         doodlerLeftSpace -= 7;
         doodler.style.left = doodlerLeftSpace + "px";
-      } else moveRight(); //the doodler leftspace is equal to zero then move right
+      } 
     }, 20);
   }
 
@@ -176,7 +176,7 @@ const showGame = () => {
       if (doodlerLeftSpace <= 313) {
         doodlerLeftSpace += 7;
         doodler.style.left = doodlerLeftSpace + "px";
-      } else moveLeft(); //the doodler rightspace is equal to zero then move left
+      }  
     }, 20);
   }
   //on click of up arrow the doodler will jump upward
@@ -186,22 +186,7 @@ const showGame = () => {
     clearInterval(leftTimerId);
     clearInterval(rightTimerId);
 
-    // if (doodlerbottomSpace < 200) {
-    //   isGoingLeft = false;
-    //   isGoingRight = false;
-    //   clearInterval(leftTimerId);
-    //   clearInterval(rightTimerId);
-    //   jumpDoodler();
-    //   isJumping = true;
-    // } else {
-    //   isGoingLeft = false;
-    //   isGoingRight = false;
-    //   clearInterval(leftTimerId);
-    //   clearInterval(rightTimerId);
-    //   fallDoodler();
-    //   isJumping = false;
-     
-    // }
+    
   }
 
   //assign functions to keyCodes
