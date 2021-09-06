@@ -24,7 +24,7 @@ const showGame = () => {
   let doodlerbottomSpace = doodlerstart;
   let upTimerId; //intervalId returned by setInterval() of jumpDoodler function
   let downTimerId; //intervalId returned by setInterval() of fallDoodler function
-  let numOfPlatforms = Math.random() * 8 + 1; //genegate platfors between 5 to 12.
+  let numOfPlatforms = Math.random() * 10 + 1; //genegate platfors between 5 to 12.
   let isJumping = true;
   let isGoingLeft = false;
   let isGoingRight = false;
@@ -58,7 +58,7 @@ const showGame = () => {
 
       //if the bottom margin of the doodler is greater than  height of 200 from the point of it started, then it will fall.
       // console.log(doodlerstart)
-      if (doodlerbottomSpace > doodlerstart + 300 || doodlerbottomSpace > 600) {
+      if (doodlerbottomSpace > doodlerstart + 500 || doodlerbottomSpace > 600) {
         fallDoodler();
 
         isJumping = false;
