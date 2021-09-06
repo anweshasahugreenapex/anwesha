@@ -24,7 +24,7 @@ const showGame = () => {
   let doodlerbottomSpace = doodlerstart;
   let upTimerId; //intervalId returned by setInterval() of jumpDoodler function
   let downTimerId; //intervalId returned by setInterval() of fallDoodler function
-  let numOfPlatforms = Math.random() * 10 + 1; //genegate platfors between 5 to 12.
+  let numOfPlatforms = Math.random() * 10 + 1; //genegate platfors between 1 to 10.
   let isJumping = true;
   let isGoingLeft = false;
   let isGoingRight = false;
