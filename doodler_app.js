@@ -51,12 +51,12 @@ const showGame = () => {
   const jumpDoodler = () => {
     clearInterval(downTimerId); //stop fallDoodler() by setting its intervalID in clearinterval()
 
-    //function to add 5px to the doodler bottom to make it move upward
+    //function to add 7px to the doodler bottom to make it move upward
     upTimerId = setInterval(() => {
       doodlerbottomSpace += 7;
       doodler.style.bottom = doodlerbottomSpace + "px";
 
-      //if the bottom margin of the doodler is greater than  height of 200 from the point of it started, then it will fall.
+      //if the bottom margin of the doodler is greater than  height of 500 from the point of it started, then it will fall.
       // console.log(doodlerstart)
       if (doodlerbottomSpace > doodlerstart + 500 || doodlerbottomSpace > 600) {
         fallDoodler();
@@ -70,7 +70,7 @@ const showGame = () => {
     isJumping = false;
     clearInterval(upTimerId); //stop jumpDoodler() by setting its intervalID in clearinterval()
 
-    //function to decrease the doodler bottom space to 5px in every 20miliseconds to make it look fall.
+    //function to decrease the doodler bottom space to 6px in every 20miliseconds to make it look fall.
     downTimerId = setInterval(() => {
       doodlerbottomSpace -= 6;
       doodler.style.bottom = doodlerbottomSpace + "px";
@@ -165,7 +165,7 @@ const showGame = () => {
   }
 
   function moveRight() {
-   
+    
     if (isGoingLeft) {
       clearInterval(leftTimerId);
       isGoingLeft = false;
