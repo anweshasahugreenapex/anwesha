@@ -191,7 +191,7 @@ const showGame = () => {
 
   //assign functions to keyCodes
   function control(e) {
-    doodler.style.bottom = doodlerbottomSpace + "px";
+
     if (e.key === "ArrowLeft") {
       //on click of left arrow button move left
       moveLeft();
