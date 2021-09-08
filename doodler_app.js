@@ -58,7 +58,7 @@ const showGame = () => {
 
       //if the bottom margin of the doodler is greater than  height of 500 from the point of it started, then it will fall.
       // console.log(doodlerstart)
-      if (doodlerbottomSpace > doodlerstart + 250 || doodlerbottomSpace > 600) {
+      if (doodlerbottomSpace > doodlerstart + 360 || doodlerbottomSpace > 600) {
         fallDoodler();
 
         isJumping = false;
