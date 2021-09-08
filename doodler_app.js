@@ -1,6 +1,6 @@
 const start_btn = document.getElementById("startbtn");
 const frontpage = document.getElementById("frontpage");
-let restartGame = false;
+
 //on click of play button the game will be shown
 start_btn.addEventListener("click", () => {
   document.addEventListener("DOMContentLoaded", showGame());
@@ -179,7 +179,7 @@ const showGame = () => {
       }  
     }, 20);
   }
-  //on click of up arrow the doodler will jump upward
+  //on click of up arrow the doodler will stop moving left or right
   function moveStraight() {
     isGoingLeft = false;
     isGoingRight = false;
