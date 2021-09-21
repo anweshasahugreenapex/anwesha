@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-
+//
 //life cycle of components using class based component
 
 //extend Counter class
