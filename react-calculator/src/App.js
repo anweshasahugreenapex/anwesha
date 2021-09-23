@@ -31,7 +31,7 @@ function App() {
         let temp1 = eval(percentageOf).toString();
         percentageOf && percentage
           ? (evalPercentage = (temp1 / 100) * percentage)
-          : (evalPercentage = percentageOf);
+          : (evalPercentage = percentageOf/100);
         setResult(evalPercentage.toString());
       }
 
