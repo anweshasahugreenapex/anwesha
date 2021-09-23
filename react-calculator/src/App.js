@@ -50,7 +50,6 @@ function App() {
         setResult(eval(result).toString());
       }
     } catch {
-      
       //else show error
       setResult("error");
     }

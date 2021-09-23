@@ -40,11 +40,9 @@ body {
   border-radius: 5px;
 }
 #clear {
-
   color: red;
 }
 #result {
- 
   color: yellowgreen;
 }
 button {
@@ -54,10 +52,6 @@ button {
   border: 2px solid rgb(20, 9, 177);
   font-weight: 600;
 }
-button:hover{
+button:hover {
   background-color: rgb(56, 55, 55);
 }
-
-
-
-
