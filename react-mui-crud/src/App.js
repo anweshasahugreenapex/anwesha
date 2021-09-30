@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   TextField,
@@ -162,7 +161,6 @@ const App = () => {
       setUser({ ...user, [name]: value });
     };
 
-   
     //function to reset the form and set editing to false
     const resetAddUser = () => {
       setEditing(false);
@@ -174,18 +172,15 @@ const App = () => {
     return (
       <form
         className={classes.root}
-
         //function to run on submit of the form
         onSubmit={(event) => {
           event.preventDefault();
 
-          //if editing is true call updateUser() else call addUser() 
+          //if editing is true call updateUser() else call addUser()
           editing ? updateUser(user.id, user) : addUser(user);
           resetAddUser();
         }}
       >
-
-        
         <TextField //input field for firstname
           label="First Name"
           type="text"
@@ -222,7 +217,6 @@ const App = () => {
           onChange={handleInputChange}
         />
 
-        
         <Button variant="contained" type="submit" color="primary">
           {editing ? "Update user" : "Add user"}
         </Button>
