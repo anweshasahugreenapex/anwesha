@@ -152,6 +152,8 @@ const App = () => {
       email: " ",
       age: " ",
     };
+
+    //if editing is true then setUser state to currentUser other wise set the userState to initialState
     const [user, setUser] = useState(editing ? currentUser : initialState);
 
     const handleInputChange = (event) => {
@@ -161,7 +163,7 @@ const App = () => {
     };
 
    
-
+    //function to reset the form and set editing to false
     const resetAddUser = () => {
       setEditing(false);
       setUser(initialState);
@@ -172,13 +174,19 @@ const App = () => {
     return (
       <form
         className={classes.root}
+
+        //function to run on submit of the form
         onSubmit={(event) => {
           event.preventDefault();
+
+          //if editing is true call updateUser() else call addUser() 
           editing ? updateUser(user.id, user) : addUser(user);
           resetAddUser();
         }}
       >
-        <TextField
+
+        
+        <TextField //input field for firstname
           label="First Name"
           type="text"
           name="fname"
@@ -187,7 +195,7 @@ const App = () => {
           onChange={handleInputChange}
         />
 
-        <TextField
+        <TextField //input field for lastname
           label="Last Name"
           type="text"
           name="lname"
@@ -196,7 +204,7 @@ const App = () => {
           onChange={handleInputChange}
         />
 
-        <TextField
+        <TextField //input field for email
           label="email"
           type="email"
           name="email"
@@ -205,7 +213,7 @@ const App = () => {
           onChange={handleInputChange}
         />
 
-        <TextField
+        <TextField //input field for age
           label="age"
           type="number"
           name="age"
@@ -213,6 +221,8 @@ const App = () => {
           value={user.age}
           onChange={handleInputChange}
         />
+
+        
         <Button variant="contained" type="submit" color="primary">
           {editing ? "Update user" : "Add user"}
         </Button>
