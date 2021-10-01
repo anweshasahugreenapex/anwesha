@@ -10,7 +10,7 @@ import {
 import "./App.css";
 import { useState } from "react";
 
-function App() {
+const App = () => {
   //set state of the input field to 1 initially
   const [input, setInput] = useState(1);
 
@@ -26,34 +26,52 @@ function App() {
   const convert = (e) => {
     e.preventDefault();
 
-    //set isConverted to true if  convert is called
-    setIsConverted(true);
-    if (from === "kilometer" && to === "mile") {
-      setAnswer(parseFloat(input * 0.6214));
-    } else if (from === "kilometer" && to === "milimeter") {
-      setAnswer(parseFloat(input * 1000000));
-    } else if (from === "kilometer" && to === "foot") {
-      setAnswer(parseFloat(input * 3280.84));
-    } else if (from === "meter" && to === "mile") {
-      setAnswer(parseFloat(input * 0.000621371));
-    } else if (from === "meter" && to === "milimeter") {
-      setAnswer(parseFloat(input * 1000));
-    } else if (from === "meter" && to === "foot") {
-      setAnswer(parseFloat(input * 3.28084));
-    } else if (from === "centimeter" && to === "mile") {
-      setAnswer(parseFloat(input * 6.21371e-6));
-    } else if (from === "centimeter" && to === "milimeter") {
-      setAnswer(parseFloat(input * 10));
-    } else if (from === "centimeter" && to === "foot") {
-      setAnswer(parseFloat(input * 0.0328084));
-    } else alert("enter  proper value");
+    //only convert if the input is not equal to
+    if (input !== "0") {
+      //set isConverted to true if  convert is called
+      setIsConverted(true);
+      switch (from) {
+        case "kilometer"://convert from kilometer
+          if (to === "mile") {
+            setAnswer(parseFloat(input * 0.6214));
+          } else if (to === "milimeter") {
+            setAnswer(parseFloat(input * 1000000));
+          } else if (to === "foot") {
+            setAnswer(parseFloat(input * 3280.84));
+          }
+          break;
+
+        case "meter"://convert from meter
+          if (to === "mile") {
+            setAnswer(parseFloat(input * 0.000621371));
+          } else if (to === "milimeter") {
+            setAnswer(parseFloat(input * 1000));
+          } else if (to === "foot") {
+            setAnswer(parseFloat(input * 3.28084));
+          }
+          break;
+
+        case "centimeter"://convert from centimeter
+          if (to === "mile") {
+            setAnswer(parseFloat(input * 6.21371e-6));
+          } else if (to === "milimeter") {
+            setAnswer(parseFloat(input * 10));
+          } else if (to === "foot") {
+            setAnswer(parseFloat(input * 0.0328084));
+          }
+          break;
+        default:
+          alert("enter  proper value");
+          break;
+      }
+    }
   };
 
   return (
     <>
       <Paper className="Paper">
         <h1>unit converter</h1>
-        <form onSubmit={convert}>
+        <form onSubmit={(e)=>convert(e)}>
           <TextField
             className="inputField"
             variant="outlined"
@@ -61,6 +79,7 @@ function App() {
             value={input || ""}
             onChange={(e) => {
               //set the isConverted to false if changes occur
+
               setIsConverted(false);
               setInput(e.target.value);
             }}
@@ -114,13 +133,14 @@ function App() {
               type="submit"
               className="button"
               variant="contained"
-              onClick={convert}
+              onClick={(e)=>convert(e)}
             >
               convert
             </Button>
           </div>
 
           {/* show the result if the isConverted is true */}
+
           {isConverted && (
             <h3 id="result">
               {input} {from} is {answer} {to}
@@ -130,6 +150,6 @@ function App() {
       </Paper>
     </>
   );
-}
+};
 
 export default App;
