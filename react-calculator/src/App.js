@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   //set state of the result and initialize
   const [result, setResult] = useState("");
 
@@ -31,7 +31,7 @@ function App() {
         let temp1 = eval(percentageOf).toString();
         percentageOf && percentage
           ? (evalPercentage = (temp1 / 100) * percentage)
-          : (evalPercentage = percentageOf/100);
+          : (evalPercentage = percentageOf / 100);
         setResult(evalPercentage.toString());
       }
 
@@ -62,71 +62,83 @@ function App() {
         <input className="input" type="text" placeholder="0" value={result} />
 
         <div className="keypad">
-          <button onClick={clear} id="clear">
+          <button onClick={(e) => clear(e)} id="clear">
             Clear
           </button>
-          <button onClick={backspace} id="backspace">
+          <button onClick={(e) => backspace(e)} id="backspace">
             c
           </button>
-          <button name="%" onClick={(calculateResult, handleClick)}>
+          <button
+            name="%"
+            onClick={(e) => {
+              calculateResult(e);
+              handleClick(e);
+            }}
+          >
             %
           </button>
-          <button name="/" onClick={handleClick}>
+          <button name="/" onClick={(e) => handleClick(e)}>
             &divide;
           </button>
-          <button name="7" onClick={handleClick}>
+          <button name="7" onClick={(e) => handleClick(e)}>
             7
           </button>
-          <button name="8" onClick={handleClick}>
+          <button name="8" onClick={(e) => handleClick(e)}>
             8
           </button>
-          <button name="9" onClick={handleClick}>
+          <button name="9" onClick={(e) => handleClick(e)}>
             9
           </button>
-          <button name="*" onClick={handleClick}>
+          <button name="*" onClick={(e) => handleClick(e)}>
             &times;
           </button>
-          <button name="4" onClick={handleClick}>
+          <button name="4" onClick={(e) => handleClick(e)}>
             4
           </button>
-          <button name="5" onClick={handleClick}>
+          <button name="5" onClick={(e) => handleClick(e)}>
             5
           </button>
-          <button name="6" onClick={handleClick}>
+          <button name="6" onClick={(e) => handleClick(e)}>
             6
           </button>
-          <button name="-" onClick={handleClick}>
+          <button name="-" onClick={(e) => handleClick(e)}>
             -
           </button>
-          <button name="1" onClick={handleClick}>
+          <button name="1" onClick={(e) => handleClick(e)}>
             1
           </button>
-          <button name="2" onClick={handleClick}>
+          <button name="2" onClick={(e) => handleClick(e)}>
             2
           </button>
-          <button name="3" onClick={handleClick}>
+          <button name="3" onClick={(e) => handleClick(e)}>
             3
           </button>
-          <button name="+" onClick={handleClick}>
+          <button name="+" onClick={(e) => handleClick(e)}>
             +
           </button>
-          <button name="0" onClick={handleClick}>
+          <button name="0" onClick={(e) => handleClick(e)}>
             0
           </button>
-          <button name="." onClick={handleClick}>
+          <button name="." onClick={(e) => handleClick(e)}>
             .
           </button>
-          <button name="=" onClick={calculateResult} id="result">
+          <button name="=" onClick={(e) => calculateResult(e)} id="result">
             =
           </button>
 
-          <button name="^" onClick={(calculateResult, handleClick)}>
+          <button
+            name="^"
+            onClick={(e) => {
+              calculateResult(e);
+              handleClick(e);
+            }}
+          >
             ^
           </button>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default App;
