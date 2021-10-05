@@ -8,7 +8,7 @@ const Popup = (props) => {
     <Dialog open={openPopup}>
       <DialogTitle>
         
-        <button //button to closethe popup
+        <Button //button to closethe popup
           style={{
             marginLeft: "95%",
             backgroundColor: "white",
@@ -19,7 +19,7 @@ const Popup = (props) => {
           }}
         >
           X
-        </button>
+        </Button>
       </DialogTitle>
 
       <DialogContent dividers>{children}</DialogContent>

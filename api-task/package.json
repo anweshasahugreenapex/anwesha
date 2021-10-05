@@ -1,5 +1,5 @@
 {
-  "name": "react-crud-routing",
+  "name": "api-task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,9 +7,9 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.22.0",
-    "concurrently": "^6.3.0",
-    "json-server": "^0.16.3",
+    "bootstrap": "^5.1.1",
     "react": "^17.0.2",
+    "react-bootstrap-table-next": "^4.0.3",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
