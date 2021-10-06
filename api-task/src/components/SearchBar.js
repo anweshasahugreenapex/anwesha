@@ -9,6 +9,7 @@ import { useState } from 'react'
       e.preventDefault();
       console.log(searchItem);
       setSearchItem("");
+      
      
 //    newPosts.map((post)=>{
 //     if(post.title.includes(searchItem) ){

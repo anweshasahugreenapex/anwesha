@@ -5,12 +5,14 @@ import Posts from "./components/Posts"
 import Pagination from './components/Pagination';
 import SearchBar from './components/SearchBar';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 function App() {
   const [posts,setPosts]=useState([])
  const[loading,setLoading]=useState(false)
  const[currentPage,setCurrentPage]=useState(1)
  const[postsPerPage]=useState(10)
+
 
  
 
