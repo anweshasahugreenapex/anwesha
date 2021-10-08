@@ -1,4 +1,4 @@
-import RouterPage from "./pages/RouterPage";
+import RouterPage from "../pages/RouterPage";
 
 function App() {
   return <RouterPage />;
