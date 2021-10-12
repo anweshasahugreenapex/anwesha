@@ -8,8 +8,10 @@ const TodoTask = ({task}:Props) => {
     return (
         <div className="task">
             {task.taskName}
+            
         </div>
     )
 }
 
 export default TodoTask
+ 
