@@ -4,6 +4,8 @@ import { getContact, updateContact } from "../../actions/contactAction";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { TextField, Button } from "@material-ui/core";
+import { Formik, useFormik } from "formik";
+import * as Yup from "yup";
 
 const EditContact = () => {
   let { id } = useParams();
@@ -12,27 +14,44 @@ const EditContact = () => {
   const contact = useSelector((state) => state.contact.contact);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [age,setAge] = useState("");
+  const [age, setAge] = useState("");
 
   //place the row values to be edited in the edit-form
   useEffect(() => {
     if (contact != null) {
       setName(contact.name);
-     setAge(contact.age);
+      setAge(contact.age);
       setEmail(contact.email);
     }
-
+    console.log(contact);
     //dispatch the contact id to be edited to the contact action to get the detals inside the form
     dispatch(getContact(id));
   }, [contact]);
+  const validationSchema = Yup.object({
+    name: Yup.string().required(),
+    email: Yup.string().email().required(),
+    age: Yup.number().min(1).max(150).required(),
+  });
 
-  const onUpdateContact = (e) => {
-    e.preventDefault();
-
-    const update_contact = Object.assign(contact, {
-      name: name,
+  const formik = useFormik({
+    initialValues: {
+      email: name,
+      name: email,
       age: age,
-      email: email,
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      // alert(JSON.stringify(values, null, 2))
+      onUpdateContact(values);
+    },
+    enableReinitialize,
+  });
+  const onUpdateContact = (values) => {
+    console.log(values.name);
+    const update_contact = Object.assign(contact, {
+      name: values.name,
+      age: values.age,
+      email: values.email,
     });
 
     //dispatch the entered updated values
@@ -40,49 +59,70 @@ const EditContact = () => {
     history.push("/");
   };
   return (
-    <div className="card border-0 shadow" style={{ marginTop: "100px" }}>
-      <div className="card-header">Update Contact</div>
-      <div className="card-body">
-        <form onSubmit={(e) => onUpdateContact(e)}>
-          <div className="form-group">
-            <TextField
-              type="text"
-              className="form-control"
-              placeholder="Enter Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <TextField
-              type="number"
-              className="form-control"
-              placeholder="Enter Your age"
-              value={age}
-              onChange={(e) =>setAge(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <TextField
-              type="text"
-              className="form-control"
-              placeholder="Enter Your E-mail Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <Button
-            varient="contained"
-            style={{
-              background: "#007bff",
-              color: "white",
-              marginLeft: "450px",
-            }}
-            type="submit"
-          >
-            Update Contact
-          </Button>
-        </form>
+    <div>
+      <div className="card border-7 shadow" style={{ marginTop: "100px" }}>
+        <div className="card-header">Add a Contact</div>
+        <div className="card-body">
+          <form onSubmit={formik.handleSubmit}>
+            <div className="form-group">
+              <TextField
+                type="text"
+                className="form-control"
+                placeholder="Enter Your Name"
+                id="name"
+                name="name"
+                type="text"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.name}
+              />
+              {formik.touched.name && formik.errors.name ? (
+                <div className="error">{formik.errors.name}</div>
+              ) : null}
+            </div>
+            <div className="form-group">
+              <TextField
+                className="form-control"
+                placeholder="Enter Your E-mail Address"
+                id="email"
+                name="email"
+                type="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="error">{formik.errors.email}</div>
+              ) : null}
+            </div>
+            <div className="form-group">
+              <TextField
+                className="form-control"
+                placeholder="Enter Your age "
+                id="age"
+                name="age"
+                type="number"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.age}
+              />
+              {formik.touched.age && formik.errors.age ? (
+                <div className="error">{formik.errors.age}</div>
+              ) : null}
+            </div>
+            <Button
+              varient="contained"
+              style={{
+                background: "#007bff",
+                color: "white",
+                marginLeft: "450px",
+              }}
+              type="submit"
+            >
+              update Contact
+            </Button>
+          </form>
+        </div>
       </div>
     </div>
   );
