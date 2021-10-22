@@ -35,9 +35,9 @@ const EditContact = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: contact.name,
-      name: contact.email,
-      age:contact. age,
+      email:contact!=null? contact.email:"",
+      name: contact!=null?contact.name:"",
+      age:contact!=null? contact.age:"",
     },
     validationSchema,
     onSubmit: (values) => {
