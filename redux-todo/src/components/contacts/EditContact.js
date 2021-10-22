@@ -35,16 +35,16 @@ const EditContact = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: name,
-      name: email,
-      age: age,
+      email: contact.name,
+      name: contact.email,
+      age:contact. age,
     },
     validationSchema,
     onSubmit: (values) => {
       // alert(JSON.stringify(values, null, 2))
       onUpdateContact(values);
     },
-    enableReinitialize,
+   
   });
   const onUpdateContact = (values) => {
     console.log(values.name);
@@ -63,6 +63,12 @@ const EditContact = () => {
       <div className="card border-7 shadow" style={{ marginTop: "100px" }}>
         <div className="card-header">Add a Contact</div>
         <div className="card-body">
+          <Formik initialValues={{ email: name,
+      name: email,
+      age: age,}} validationSchema={validationSchema}  enableReinitialize  onSubmit={(values) => {
+        // alert(JSON.stringify(values, null, 2))
+        onUpdateContact(values);
+      }}>
           <form onSubmit={formik.handleSubmit}>
             <div className="form-group">
               <TextField
@@ -122,6 +128,9 @@ const EditContact = () => {
               update Contact
             </Button>
           </form>
+
+          </Formik>
+          
         </div>
       </div>
     </div>
