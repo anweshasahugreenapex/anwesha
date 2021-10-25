@@ -3,18 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { getContact, updateContact } from "../../actions/contactAction";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, RootRefProps } from "@material-ui/core";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
+import { contactType } from "../../types/contactType";
+import { formValue } from "../../types/contactType";
 
 const EditContact = () => {
-  let { id } = useParams();
+  let  id:number  = useParams();
   let history = useHistory();
   const dispatch = useDispatch();
-  const contact = useSelector((state) => state.contact.contact);
+  const contact = useSelector((state:any) => state.contact.contact);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState(0);
 
   //place the row values to be edited in the edit-form
   useEffect(() => {
@@ -37,7 +39,7 @@ const EditContact = () => {
     initialValues: {
       email:contact!=null? contact.email:"",
       name: contact!=null?contact.name:"",
-      age:contact!=null? contact.age:"",
+      age:contact!=null? contact.age:0,
     },
     validationSchema,
     onSubmit: (values) => {
@@ -46,7 +48,7 @@ const EditContact = () => {
     },
    
   });
-  const onUpdateContact = (values) => {
+  const onUpdateContact = (values:formValue) => {
     console.log(values.name);
     const update_contact = Object.assign(contact, {
       name: values.name,
@@ -65,7 +67,7 @@ const EditContact = () => {
         <div className="card-body">
           <Formik initialValues={{ email: name,
       name: email,
-      age: age,}} validationSchema={validationSchema}  enableReinitialize  onSubmit={(values) => {
+      age: age,}} validationSchema={validationSchema}  enableReinitialize  onSubmit={(values:formValue) => {
         // alert(JSON.stringify(values, null, 2))
         onUpdateContact(values);
       }}>
@@ -77,7 +79,7 @@ const EditContact = () => {
                 placeholder="Enter Your Name"
                 id="name"
                 name="name"
-                type="text"
+               
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.name}
@@ -116,17 +118,12 @@ const EditContact = () => {
                 <div className="error">{formik.errors.age}</div>
               ) : null}
             </div>
-            <Button
-              varient="contained"
-              style={{
-                background: "#007bff",
-                color: "white",
-                marginLeft: "450px",
-              }}
+            <button
+              
               type="submit"
             >
               update Contact
-            </Button>
+            </button>
           </form>
 
           </Formik>
@@ -138,3 +135,6 @@ const EditContact = () => {
 };
 
 export default EditContact;
+
+
+

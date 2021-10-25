@@ -1,13 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import { deleteContact } from "../../actions/contactAction";
 import { useDispatch } from "react-redux";
 import { TableCell, TableRow } from "@material-ui/core";
 
-const Contact = ({ contact }) => {
+
+
+const Contact  = ({contact}:{contact:any}) => {
   const dispatch = useDispatch(); //returns the reference to the dispatch from redux store to dispatch actions as needed.
 
-  //destructure props
+  // //destructure props
   const { name, age, email, id } = contact;
 
   return (
@@ -19,9 +21,9 @@ const Contact = ({ contact }) => {
       <TableCell>{age}</TableCell>
       <TableCell>{email}</TableCell>
       <TableCell className="actions">
-        <Link to={`/contacts/edit/${id}`}>
+        {/* <Link to={`/contacts/edit/${id}`}>
           <span className="material-icons mr-2">edit</span>
-        </Link>
+        </Link> */}
         <span
           className="material-icons  text-danger"
           style={{ cursor: "pointer" }}

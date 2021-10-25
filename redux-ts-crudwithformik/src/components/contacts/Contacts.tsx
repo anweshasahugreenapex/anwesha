@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { contactType } from "../../types/contactType";
 import Contact from "./Contact";
 
 const Contacts = () => {
-  const contacts = useSelector((state) => state.contact.contacts); //get the state of contacts from the store
+  const contacts = useSelector((state:any) => state.contact.contacts); //get the state of contacts from the store
 
   return (
     //return the contact list with header and all current contacts
@@ -19,7 +20,7 @@ const Contacts = () => {
           </tr>
         </thead>
         <tbody>
-          {contacts.map((contact) => (
+          {contacts.map((contact:contactType) => (
             <Contact contact={contact} key={contact.id} />
           ))}
         </tbody>
