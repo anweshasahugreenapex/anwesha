@@ -21,7 +21,6 @@ const App = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState(0);
-
   const [editing, setEditing] = useState(false);
   const [editId, setEditId] = useState(0);
 
@@ -48,6 +47,7 @@ const App = () => {
   };
   let arr = [];
 
+  //handle click is called on click of edit button
   const handleEditClick = (values: contactType) => {
     setEditing(true);
     setName(values.name);
@@ -56,6 +56,7 @@ const App = () => {
     setEditId(values.id);
   };
 
+  //update the existing contact
   const onUpdateContact = (values: formValue) => {
     console.log(values);
     const update_contact = Object.assign({
@@ -117,6 +118,7 @@ const App = () => {
         )}
       </Formik>
 
+      {/* display the data table */}
       <table className="table shadow" style={{ marginTop: "100px" }}>
         <thead>
           <tr>
