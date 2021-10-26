@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 
-import { Formik, Form, Field} from "formik";
+import { Formik, Form, Field } from "formik";
 
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
@@ -9,7 +8,6 @@ import {
   addContact,
   updateContact,
   deleteContact,
- 
 } from "./actions/contactAction";
 import { contactType, formValue } from "./types/contactType";
 import { useSelector } from "react-redux";
@@ -26,11 +24,12 @@ const App = () => {
 
   const [editing, setEditing] = useState(false);
   const [editId, setEditId] = useState(0);
+
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
+      .min(2, "name too Short!")
+      .max(50, "name too Long!")
+      .required(" name is Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     age: Yup.number().min(1).max(150).required(),
   });
@@ -55,7 +54,6 @@ const App = () => {
     setAge(values.age);
     setEmail(values.email);
     setEditId(values.id);
-    
   };
 
   const onUpdateContact = (values: formValue) => {
@@ -77,16 +75,18 @@ const App = () => {
       <h1>form</h1>
       <Formik
         initialValues={{
-          name: editing ? name : "",
-          email: editing ? email : "",
-          age: editing ? age : 0,
+          name: (editing && name) || "",
+          email: (editing && email) || "",
+          age: (editing && age) || 0,
         }}
         enableReinitialize
         validationSchema={validationSchema}
-        onSubmit={(values: formValue) => {
+        onSubmit={(values: formValue, { resetForm }) => {
           // same shape as initial values
           //
+
           editing ? onUpdateContact(values) : craeteContact(values);
+          resetForm();
         }}
       >
         {({ errors, touched }) => (
