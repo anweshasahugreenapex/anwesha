@@ -1,45 +1,7 @@
-// import React from "react";
-// import Navbar from "./components/elements/Navbar";
-// import Contacts from "./components/contacts/Contacts";
-// import { Provider } from "react-redux";
-// import store from "./store";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import AddContact from "./components/contacts/AddContact";
-// import EditContact from "./components/contacts/EditContact";
-
-// function App() {
-//   return (
-
-//     //give store access to the whole app
-//     <Provider store={store}>
-//       <Router>
-//         <div className="App">
-//           <Navbar />
-//           <div className="container">
-//             <div className="py-3">
-//               <Switch>
-//                 <Route exact path="/" component={Contacts} />
-//                 <Route exact path="/contacts/add" component={AddContact} />
-//                 {/* <Route
-//                   exact
-//                   path="/contacts/edit/:id"
-//                   component={EditContact}
-//                 /> */}
-//               </Switch>
-//             </div>
-//           </div>
-//         </div>
-//       </Router>
-//     </Provider>
-//   );
-// }
-
-// export default App;
 
 import React, { useState } from "react";
-import { useEffect } from "react";
 
-import { Formik, Form, Field, useFormik } from "formik";
+import { Formik, Form, Field} from "formik";
 
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
@@ -47,7 +9,7 @@ import {
   addContact,
   updateContact,
   deleteContact,
-  getContact,
+ 
 } from "./actions/contactAction";
 import { contactType, formValue } from "./types/contactType";
 import { useSelector } from "react-redux";
@@ -93,12 +55,7 @@ const App = () => {
     setAge(values.age);
     setEmail(values.email);
     setEditId(values.id);
-    //   console.log(values.id)
-
-    // arr= contacts.filter(
-    //     (contact:contactType) => contact.id == values.id
-    //   )
-    //   console.log(arr)
+    
   };
 
   const onUpdateContact = (values: formValue) => {
