@@ -45,7 +45,7 @@ const App = () => {
     //dispatch the newContact to contactAction
     dispatch(addContact(new_contact));
   };
-  let arr = [];
+  
 
   //handle click is called on click of edit button
   const handleEditClick = (values: contactType) => {
@@ -73,7 +73,11 @@ const App = () => {
 
   return (
     <div>
-      <h1>form</h1>
+      {editing ? (
+        <h6 style={{ marginLeft: "48%" }}>UPDATE USER</h6>
+      ) : (
+        <h6 style={{ marginLeft: "48%" }}>ADD USER</h6>
+      )}
       <Formik
         initialValues={{
           name: (editing && name) || "",
@@ -83,27 +87,39 @@ const App = () => {
         enableReinitialize
         validationSchema={validationSchema}
         onSubmit={(values: formValue, { resetForm }) => {
-          // same shape as initial values
-          //
-
           editing ? onUpdateContact(values) : craeteContact(values);
           resetForm();
         }}
       >
         {({ errors, touched }) => (
-          <Form>
-            <Field name="name" placeholder="name" />
+          <Form style={{ marginLeft: "30%" }}>
+            <Field
+              type="text"
+              name="name"
+              placeholder="name"
+              style={{ width: "60%" }}
+            />
             {/* If this field has been touched, and it contains an error, display it
              */}
             {touched.name && errors.name && <div>{errors.name}</div>}
             <div>
-              <Field name="email" placeholder="email" />
+              <Field
+                type="text"
+                name="email"
+                placeholder="email"
+                style={{ width: "60%" }}
+              />
               {/* If this field has been touched, and it contains an error, display
           it */}
               {touched.email && errors.email && <div>{errors.email}</div>}
             </div>
             <div>
-              <Field name="age" placeholder="age" />
+              <Field
+                type="number"
+                name="age"
+                placeholder="age"
+                style={{ width: "60%" }}
+              />
               {/* If this field has been touched, and it contains an error, display
           it */}
               {touched.age && errors.age && <div>{errors.age}</div>}
@@ -119,16 +135,21 @@ const App = () => {
       </Formik>
 
       {/* display the data table */}
-      <table className="table shadow" style={{ marginTop: "100px" }}>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>age</th>
-            <th>E-mail</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
+      <table
+        className="table "
+        style={{ marginTop: "100px", marginLeft: "34%" }}
+      >
+        {contacts.length !== 0 && (
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>age</th>
+              <th>E-mail</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+        )}
         <tbody>
           {contacts &&
             contacts.map((data: contactType, index: number) => {
@@ -139,10 +160,10 @@ const App = () => {
                   <td>{data.age}</td>
                   <td>{data.email}</td>
                   <td>
-                    <button onClick={() => handleEditClick(data)}>EDIT</button>{" "}
+                    <button onClick={() => handleEditClick(data)}>EDIT</button>
                     <button onClick={() => dispatch(deleteContact(data.id))}>
                       DELETE
-                    </button>{" "}
+                    </button>
                   </td>
                 </tr>
               );

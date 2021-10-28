@@ -35,7 +35,7 @@ import {
         return {
           ...state,
           contacts: state.contacts.map((contact:contactType) =>
-            contact.id === action.contact.id ? action.contact: contact
+            contact.id == action.contact.id ? action.contact: contact
           ),
         };
       case DELETE_CONTACT:
