@@ -31,7 +31,7 @@ function TableContainer() {
         accessor: "author",
       },
     ],
-    []
+    [post]
   );
   const {
     getTableProps,
@@ -69,7 +69,7 @@ function TableContainer() {
   }, [post]);
 
   useEffect(() => {
-    setPageSize(20);
+    setPageSize(10);
     gotoPage(pageCount - 1);
   }, [pageCount]);
 
