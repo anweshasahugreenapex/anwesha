@@ -2,7 +2,7 @@ import { useLocation,useParams } from "react-router-dom";
 
 const JsonData = () => {
     const title=useParams()
-    console.log("title")
+    console.log(title)
   const location = useLocation();
 
   console.log("hello from jasonData");
