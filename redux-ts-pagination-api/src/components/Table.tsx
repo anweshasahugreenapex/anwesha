@@ -7,12 +7,11 @@ import { column } from "./Types/Types";
 import { useTable, usePagination } from "react-table";
 import { useHistory } from "react-router-dom";
 
-
 function TableContainer() {
   const [post, setpost] = useState<number>(1);
   const storeState = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
-  let history=useHistory()
+  let history = useHistory();
   const row = storeState.data;
   const data = useMemo(() => row, [row]);
   const columns = React.useMemo(
@@ -77,14 +76,13 @@ function TableContainer() {
   }, [pageCount]);
 
   const showRawJasonData = (data: any) => {
-     console.log(data);
-     console.log(history)
+    console.log(data);
+    console.log(history);
     history.push({
       pathname: `/json/${data.title}`,
       state: { data },
     });
   };
-  
 
   return (
     <div>
@@ -106,7 +104,10 @@ function TableContainer() {
               {page.map((row) => {
                 prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()} onClick={() => showRawJasonData(row.original)}>
+                  <tr
+                    {...row.getRowProps()}
+                    onClick={() => showRawJasonData(row.original)}
+                  >
                     {row.cells.map((cell) => {
                       return (
                         <td {...cell.getCellProps()} scope="row">
