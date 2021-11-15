@@ -78,7 +78,8 @@ function TableContainer() {
 
   const showRawJasonData = (data: any) => {
      console.log(data);
-    history?.push({
+     console.log(history)
+    history.push({
       pathname: `/json/${data.title}`,
       state: { data },
     });
