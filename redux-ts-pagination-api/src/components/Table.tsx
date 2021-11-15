@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../components/redux/FetchAPI";
-import { AppState } from "../components/redux/reducer";
+import { fetchPosts } from "./redux/FetchAPI";
+import { AppState } from "./redux/reducer";
 import { useMemo } from "react";
-import { column } from "../components/Types/Types";
+import { column } from "./Types/Types";
 import { useTable, usePagination } from "react-table";
+import { useHistory } from "react-router-dom";
+
 
 function TableContainer() {
   const [post, setpost] = useState<number>(1);
   const storeState = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
+ let history=useHistory()
   const row = storeState.data;
   const data = useMemo(() => row, [row]);
   const columns = React.useMemo(
@@ -73,6 +76,15 @@ function TableContainer() {
     gotoPage(pageCount - 1);
   }, [pageCount]);
 
+  const showRawJasonData = (data: any) => {
+     console.log(data);
+    history?.push({
+      pathname: `/json/${data.title}`,
+      state: { data },
+    });
+  };
+  
+
   return (
     <div>
       {row.length ? (
@@ -93,7 +105,7 @@ function TableContainer() {
               {page.map((row) => {
                 prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()}>
+                  <tr {...row.getRowProps()} onClick={() => showRawJasonData(row.original)}>
                     {row.cells.map((cell) => {
                       return (
                         <td {...cell.getCellProps()} scope="row">
