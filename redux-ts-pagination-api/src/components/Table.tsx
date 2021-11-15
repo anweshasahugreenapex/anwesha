@@ -12,7 +12,7 @@ function TableContainer() {
   const [post, setpost] = useState<number>(1);
   const storeState = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
- let history=useHistory()
+  let history=useHistory()
   const row = storeState.data;
   const data = useMemo(() => row, [row]);
   const columns = React.useMemo(
