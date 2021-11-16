@@ -2,7 +2,7 @@ import { useLocation,useParams } from "react-router-dom";
 import { useEffect } from "react";
 const JsonData = () => {
     const title=useParams()
-    console.log(title)
+    console.log(title) 
   const location = useLocation();
 //   useEffect(() => {
 //      console.log(`location:${location.state}`)
